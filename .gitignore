@@ -2,3 +2,4 @@ Plan/
 bin/
 obj/
 *.cbp
+*.depend
