@@ -1,3 +1,20 @@
 # depslib dependency file v1.0
-1601395949 source:a:\projekty git\ksiazkaadresowappp\ksiazkaadresowa.cpp
+1601480589 source:a:\projekty git\ksiazkaadresowappp\ksiazkaadresowa.cpp
+	"KsiazkaAdresowa.h"
+
+1601480206 source:a:\projekty git\ksiazkaadresowappp\main.cpp
+	<iostream>
+	"KsiazkaAdresowa.h"
+
+1601480486 a:\projekty git\ksiazkaadresowappp\ksiazkaadresowa.h
+	<iostream>
+	<vector>
+	<windows.h>
+	"Uzytkownik.h"
+
+1601397758 a:\projekty git\ksiazkaadresowappp\uzytkownik.h
+	<iostream>
+
+1601398022 source:a:\projekty git\ksiazkaadresowappp\uzytkownik.cpp
+	"Uzytkownik.h"
 
