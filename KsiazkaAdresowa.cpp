@@ -60,10 +60,13 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
     }
 }
 
+
 void KsiazkaAdresowa::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik) {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
     plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(),ios::out|ios::app);
+
+
 
     if (plikTekstowy.good() == true) {
         liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
@@ -105,3 +108,4 @@ bool KsiazkaAdresowa::czyPlikJestPusty(fstream &plikTekstowy)
     else
         return false;
 }
+
