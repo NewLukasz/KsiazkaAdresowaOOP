@@ -4,7 +4,7 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
-    //dopiszUzytkownikaDoPliku(uzytkownik);
+    dopiszUzytkownikaDoPliku(uzytkownik);
 
     cout <<"Konto zalozono pomyslnie" << endl << endl;
     system("pause");
@@ -53,4 +53,25 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
         cout<<uzytkownicy[i].pobierzLogin()<<endl;
         cout<<uzytkownicy[i].pobierzHaslo()<<endl;
     }
-};
+}
+
+
+void KsiazkaAdresowa::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik) {
+    fstream plikTekstowy;
+    string liniaZDanymiUzytkownika = "";
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
+
+    if (plikTekstowy.good() == true) {
+        liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
+
+        if (czyPlikJestPusty(plikTekstowy) == true) {
+            plikTekstowy << liniaZDanymiUzytkownika;
+        } else {
+            plikTekstowy << endl << liniaZDanymiUzytkownika ;
+        }
+    } else
+        cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZUzytkownikami << " i zapisac w nim danych." << endl;
+    plikTekstowy.close();
+}
+
+
