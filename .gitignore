@@ -2,3 +2,6 @@ Plan/
 bin/
 obj/
 *.cbp
+*.depend
+*.layout
+Uzytkownicy.txt
