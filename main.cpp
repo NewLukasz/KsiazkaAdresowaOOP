@@ -2,8 +2,7 @@
 #include "KsiazkaAdresowa.h"
 using namespace std;
 
-int main()
-{
+int main() {
     KsiazkaAdresowa ksiazkaAdresowa;
 
     ksiazkaAdresowa.rejestracjaUzytkownika();
