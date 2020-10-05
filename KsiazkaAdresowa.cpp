@@ -7,3 +7,4 @@ void KsiazkaAdresowa::rejestracjaUzytkownika(){
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow(){
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
+
