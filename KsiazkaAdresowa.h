@@ -4,12 +4,16 @@
 #include <iostream>
 
 #include "UzytkownikMenedzer.h"
+#include "PlikZUzytkownikami.h"
 
 using namespace std;
 
 class KsiazkaAdresowa {
     UzytkownikMenedzer uzytkownikMenedzer;
+    PlikZUzytkownikami plikZUzytkownikami;
+
 public:
+    vector <Uzytkownik> uzytkownicy;
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
 };
