@@ -14,7 +14,6 @@ class KsiazkaAdresowa {
 
 public:
     vector <Uzytkownik> uzytkownicy;
-    vector <Uzytkownik> wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
 };
