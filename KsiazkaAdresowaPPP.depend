@@ -1,45 +1,47 @@
 # depslib dependency file v1.0
-1601708637 source:a:\projekty git\ksiazkaadresowappp\ksiazkaadresowa.cpp
+1601912605 source:a:\projekty git\ksiazkaadresowappp\ksiazkaadresowa.cpp
 	"KsiazkaAdresowa.h"
 
-1601572078 source:a:\projekty git\ksiazkaadresowappp\main.cpp
+1601912597 source:a:\projekty git\ksiazkaadresowappp\main.cpp
 	<iostream>
 	"KsiazkaAdresowa.h"
 
-1601710706 a:\projekty git\ksiazkaadresowappp\ksiazkaadresowa.h
+1601912575 a:\projekty git\ksiazkaadresowappp\ksiazkaadresowa.h
 	<iostream>
 	"UzytkownikMenedzer.h"
+	"PlikZUzytkownikami.h"
 
-1601710707 a:\projekty git\ksiazkaadresowappp\uzytkownik.h
+1601814193 a:\projekty git\ksiazkaadresowappp\uzytkownik.h
 	<iostream>
 
 1601572078 source:a:\projekty git\ksiazkaadresowappp\uzytkownik.cpp
 	"Uzytkownik.h"
 
-1601708130 source:a:\projekty git\ksiazkaadresowappp\metodypomocnicze.cpp
+1601814193 source:a:\projekty git\ksiazkaadresowappp\metodypomocnicze.cpp
 	"MetodyPomocnicze.h"
 
-1601710531 source:a:\projekty git\ksiazkaadresowappp\plikzuzytkownikami.cpp
+1601912329 source:a:\projekty git\ksiazkaadresowappp\plikzuzytkownikami.cpp
 	"PlikZUzytkownikami.h"
 
-1601710609 a:\projekty git\ksiazkaadresowappp\metodypomocnicze.h
+1601814193 a:\projekty git\ksiazkaadresowappp\metodypomocnicze.h
 	<iostream>
 	<sstream>
 
-1601813240 a:\projekty git\ksiazkaadresowappp\uzytkownikmenedzer.h
+1601912535 a:\projekty git\ksiazkaadresowappp\uzytkownikmenedzer.h
 	<iostream>
 	<vector>
 	<windows.h>
 	"PlikZUzytkownikami.h"
 	"Uzytkownik.h"
 
-1601710704 a:\projekty git\ksiazkaadresowappp\plikzuzytkownikami.h
+1601911865 a:\projekty git\ksiazkaadresowappp\plikzuzytkownikami.h
 	<iostream>
 	<vector>
 	<fstream>
+	<cstdlib>
 	"Uzytkownik.h"
 	"MetodyPomocnicze.h"
 
-1601709595 source:a:\projekty git\ksiazkaadresowappp\uzytkownikmenedzer.cpp
+1601912553 source:a:\projekty git\ksiazkaadresowappp\uzytkownikmenedzer.cpp
 	"UzytkownikMenedzer.h"
 

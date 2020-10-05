@@ -6,6 +6,5 @@ int main() {
     KsiazkaAdresowa ksiazkaAdresowa;
 
     ksiazkaAdresowa.rejestracjaUzytkownika();
-
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 }
