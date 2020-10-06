@@ -1,10 +1,5 @@
 #include "PlikZUzytkownikami.h"
 
-PlikZUzytkownikami::PlikZUzytkownikami() {
-    nazwaPlikuZUzytkownikami="Uzytkownicy.txt";
-    daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
-}
-
 bool PlikZUzytkownikami::czyPlikJestPusty(fstream &plikTekstowy) {
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
