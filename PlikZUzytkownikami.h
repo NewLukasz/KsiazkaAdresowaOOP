@@ -12,12 +12,10 @@ using namespace std;
 
 class PlikZUzytkownikami{
     string nazwaPlikuZUzytkownikami;
-    fstream plikTekstowy;
-
     Uzytkownik uzytkownik;
     string daneJednegoUzytkownikaOddzielonePionowymiKreskami;
 
-    bool czyPlikJestPusty();
+    bool czyPlikJestPusty(fstream &plikTekstowy);
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);
 
     Uzytkownik pobierzDaneUzytkownika();
