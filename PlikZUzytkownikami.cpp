@@ -72,5 +72,5 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika() {
             numerPojedynczejDanejUzytkownika++;
         }
     }
-    return uzytkownik;
+        return uzytkownik;
 }
