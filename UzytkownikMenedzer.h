@@ -7,6 +7,8 @@
 
 #include "PlikZUzytkownikami.h"
 #include "Uzytkownik.h"
+#include "AdresatMenedzer.h"
+
 using namespace std;
 
 class UzytkownikMenedzer {
@@ -21,6 +23,8 @@ class UzytkownikMenedzer {
     void wyswietlMenuNiezalogowanegoUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     char wczytajZnak();
+    int logowanieUzytkownika();
+    string wczytajLinie();
 
 
 public:
