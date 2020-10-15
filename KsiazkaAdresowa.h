@@ -16,5 +16,8 @@ public:
     vector <Uzytkownik> uzytkownicy;
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
+    char wybierzOpcjeZMenuUzytkownika();
+    char wybierzOpcjeZMenuGlownego();
+    int logowanieUzytkownika();
 };
 #endif

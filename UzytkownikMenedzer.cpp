@@ -58,4 +58,80 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow() {
     }
 }
 
+int UzytkownikMenedzer::logowanieUzytkownika() {
+
+    Uzytkownik uzytkownik; //jaki konstruktor
+    string login = "", haslo = "";
+
+    cout << endl << "Podaj login: ";
+    login = MetodyPomocnicze::wczytajLinie();
+
+    vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
+
+    for(int i=0;i<uzytkownicy.size();i++){
+        if(uzytkownicy[i].pobierzLogin()==login){
+            for(int iloscProb = 3; iloscProb>0; iloscProb--){
+                cout<<"Podaj haslo. Pozostalo prob: "<<iloscProb<<": ";
+                haslo=MetodyPomocnicze::wczytajLinie();
+                if(uzytkownicy[i].pobierzHaslo()==haslo){
+                    cout<<endl<<"Zalogowales sie."<<endl<<endl;
+                    system("pause");
+                    return uzytkownicy[i].pobierzId();
+                }
+            }
+            cout<<"Wprowadzono 3 razy bledne haslo."<<endl;
+            system("pause");
+            return 0;
+        }
+    }
+/*
+    while (itr != uzytkownicy.end())
+    {
+        if (itr -> login == login)
+        {
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                haslo = MetodyPomocnicze::wczytajLinie();
+
+                if (itr -> haslo == haslo)
+                {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    return itr -> id;
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            return 0;
+        }
+        itr++;
+    }*/
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    return 0;
+}
+
+char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika(){
+    char wybor;
+
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+    cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+    cout << "5. Usun adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
+    cout << "---------------------------" << endl;
+    cout << "7. Zmien haslo" << endl;
+    cout << "8. Wyloguj sie" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
+}
+
 
