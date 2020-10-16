@@ -31,7 +31,7 @@ int main() {
 
             switch (wybor) {
             case '1':
-//                idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+               ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
 //                wyszukajAdresatowPoImieniu(adresaci);
@@ -40,6 +40,7 @@ int main() {
 //                wyszukajAdresatowPoNazwisku(adresaci);
                 break;
             case '4':
+                ksiazkaAdresowa.wypiszDaneWszytkichAdresatow();
 //                wyswietlWszystkichAdresatow(adresaci);
                 break;
             case '5':

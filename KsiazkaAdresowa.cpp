@@ -32,4 +32,11 @@ int KsiazkaAdresowa::logowanieUzytkownika(){
     uzytkownikMenedzer.logowanieUzytkownika();
 }
 
+void KsiazkaAdresowa::dodajAdresata(){
+    adresatMenedzer.dodajAdresata();
+}
+
+void KsiazkaAdresowa::wypiszDaneWszytkichAdresatow(){
+    adresatMenedzer.wypiszWszystkichAdresatow();
+}
 
