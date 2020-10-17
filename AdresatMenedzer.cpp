@@ -1,6 +1,6 @@
 #include "AdresatMenedzer.h"
 
-void AdresatMenedzer::dodajAdresata(){
+void AdresatMenedzer::dodajAdresata() {
     cout<<endl<<"Podaj imie: ";
     string imie=MetodyPomocnicze::wczytajLinie();
     cout<<"Podaj nazwisko: ";
@@ -11,15 +11,27 @@ void AdresatMenedzer::dodajAdresata(){
     string email=MetodyPomocnicze::wczytajLinie();
     cout<<"Podaj adres: ";
     string adres=MetodyPomocnicze::wczytajLinie();
-    Adresat adresat(1,1,imie,nazwisko,numerTelefonu,email,adres);
+    Adresat adresat(przeslijIdOstatniegoAdresata()+1,ID_ZALOGOWANEGO_UZYTKOWNIKA,imie,nazwisko,numerTelefonu,email,adres);
+
+    plikZAdresatami.dopiszAdrestaDoPliku(adresat);
+
     adresaci.push_back(adresat);
+
 }
 
-void AdresatMenedzer::wypiszWszystkichAdresatow(){
-    for(int i=0;i<adresaci.size();i++){
-        adresaci[i].wypiszDaneAdresata();
+void AdresatMenedzer::wypiszWszystkichAdresatow() {
+    if(adresaci.size()==0) {
+        cout<<"Brak adresatow to wyswietlenia"<<endl;
+        system("pause");
+    } else {
+        for(int i=0; i<adresaci.size(); i++) {
+            adresaci[i].wypiszDaneAdresata();
+        }
+        system("pause");
     }
-    system("pause");
 }
 
+int AdresatMenedzer::przeslijIdOstatniegoAdresata(){
+    return (adresaci.back()).pobierzId();
+}
 

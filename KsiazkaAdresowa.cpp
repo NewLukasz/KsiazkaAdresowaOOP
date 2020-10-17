@@ -29,14 +29,22 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika(){
 }
 
 int KsiazkaAdresowa::logowanieUzytkownika(){
-    uzytkownikMenedzer.logowanieUzytkownika();
+    int idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany()){
+        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+    }
+    return idZalogowanegoUzytkownika;
 }
 
 void KsiazkaAdresowa::dodajAdresata(){
-    adresatMenedzer.dodajAdresata();
+    adresatMenedzer->dodajAdresata();
 }
 
 void KsiazkaAdresowa::wypiszDaneWszytkichAdresatow(){
-    adresatMenedzer.wypiszWszystkichAdresatow();
+    adresatMenedzer->wypiszWszystkichAdresatow();
+}
+
+int KsiazkaAdresowa::przeslijIdOstatniegoAdresata(){
+    adresatMenedzer->przeslijIdOstatniegoAdresata();
 }
 

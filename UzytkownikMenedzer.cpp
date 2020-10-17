@@ -5,7 +5,6 @@ void UzytkownikMenedzer::rejestracjaUzytkownika() {
 
     uzytkownicy.push_back(uzytkownik);
 
-
     plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
 
     cout <<"Konto zalozono pomyslnie" << endl << endl;
@@ -60,7 +59,7 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow() {
 
 int UzytkownikMenedzer::logowanieUzytkownika() {
 
-    Uzytkownik uzytkownik; //jaki konstruktor
+    Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
@@ -76,7 +75,8 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
                 if(uzytkownicy[i].pobierzHaslo()==haslo){
                     cout<<endl<<"Zalogowales sie."<<endl<<endl;
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    idZalogowanegoUzytkownika=uzytkownicy[i].pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout<<"Wprowadzono 3 razy bledne haslo."<<endl;
@@ -111,4 +111,14 @@ char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika(){
     return wybor;
 }
 
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany(){
+    if (idZalogowanegoUzytkownika==0){
+        return false;
+    }else{
+        return true;
+    }
+}
 
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika(){
+    return idZalogowanegoUzytkownika;
+}

@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
     int idZalogowanegoUzytkownika=0;
     char wybor;
 
@@ -28,10 +28,10 @@ int main() {
             }
         } else {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
-
+            //int idOstatniegoAdresata=ksiazkaAdresowa.przeslijIdOstatniegoAdresata();
             switch (wybor) {
             case '1':
-               ksiazkaAdresowa.dodajAdresata();
+                ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
 //                wyszukajAdresatowPoImieniu(adresaci);
