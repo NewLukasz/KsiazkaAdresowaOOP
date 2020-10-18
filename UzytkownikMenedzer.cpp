@@ -1,5 +1,108 @@
 #include "UzytkownikMenedzer.h"
 
+UzytkownikMenedzer::UzytkownikMenedzer(string nazwaPlikuZUzytkownikami):plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+    uzytkownicy=plikZUzytkownikami.wczytajUzytkownikowZPliku();
+    idZalogowanegoUzytkownika=0;
+    wyswietlMenuNiezalogowanegoUzytkownika();
+};
+
+void UzytkownikMenedzer::wyswietlMenuNiezalogowanegoUzytkownika() {
+    char wybor= {0};
+    while (true) {
+        if (idZalogowanegoUzytkownika == 0) {
+            wybor = wybierzOpcjeZMenuGlownego();
+
+            switch (wybor) {
+            case '1': {
+                rejestracjaUzytkownika();
+            }
+            break;
+            case '2': {
+                idZalogowanegoUzytkownika=logowanieUzytkownika();
+                AdresatMenedzer adresatMenedzer(idZalogowanegoUzytkownika);
+            }
+            break;
+            case '9': {
+                exit(0);
+            }
+            break;
+            default: {
+                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+                system("pause");
+            }
+            break;
+            }
+        }
+    }
+}
+
+char UzytkownikMenedzer::wybierzOpcjeZMenuGlownego() {
+    char wybor;
+
+    system("cls");
+    cout << "    >>> MENU  GLOWNE <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Rejestracja" << endl;
+    cout << "2. Logowanie" << endl;
+    cout << "9. Koniec programu" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = wczytajZnak();
+
+    return wybor;
+}
+
+char UzytkownikMenedzer::wczytajZnak() {
+    string wejscie = "";
+    char znak  = {0};
+    cin.sync();
+    while (true) {
+        getline(cin, wejscie);
+
+        if (wejscie.length() == 1) {
+            znak = wejscie[0];
+            break;
+        }
+        cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
+    }
+    return znak;
+}
+
+int UzytkownikMenedzer::logowanieUzytkownika() {
+    Uzytkownik uzytkownik;
+    string login = "", haslo = "";
+
+    cout << endl << "Podaj login: ";
+    login = wczytajLinie();
+
+    for(int i=0; i<uzytkownicy.size(); i++) {
+        if (uzytkownicy[i].pobierzLogin()==login) {
+            for(int iloscProb=3; iloscProb>0; iloscProb--) {
+                cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
+                haslo = wczytajLinie();
+                if(uzytkownicy[i].pobierzHaslo()==haslo) {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    return uzytkownicy[i].pobierzId();
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            return 0;
+        }
+    }
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    return 0;
+}
+
+string UzytkownikMenedzer::wczytajLinie() {
+    cin.sync();
+    string wejscie = "";
+    getline(cin, wejscie);
+    return wejscie;
+}
+
 void UzytkownikMenedzer::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
