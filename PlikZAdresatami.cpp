@@ -10,6 +10,7 @@ void PlikZAdresatami::dopiszAdrestaDoPliku(Adresat adresat) {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
 
         if (czyPlikJestPusty(plikTekstowy) == true) {
+
             plikTekstowy << liniaZDanymiAdresata;
         } else {
             plikTekstowy << endl << liniaZDanymiAdresata ;
@@ -22,7 +23,7 @@ void PlikZAdresatami::dopiszAdrestaDoPliku(Adresat adresat) {
     system("pause");
 }
 
-string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat){
+string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat) {
     string liniaZDanymiAdresata = "";
 
     liniaZDanymiAdresata += MetodyPomocnicze::konwerjsaIntNaString(adresat.pobierzId()) + '|';
@@ -43,7 +44,7 @@ bool PlikZAdresatami::czyPlikJestPusty(fstream &plikTekstowy) {
         return false;
 }
 
-vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika){
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika) {
     Adresat adresat;
     vector <Adresat> adresaci;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
@@ -133,10 +134,10 @@ string PlikZAdresatami::pobierzLiczbe(string tekst, int pozycjaZnaku) {
     return liczba;
 }
 
-PlikZAdresatami::PlikZAdresatami(string nazwaPlikuZAdresatamiWyslana){
+PlikZAdresatami::PlikZAdresatami(string nazwaPlikuZAdresatamiWyslana) {
     nazwaPlikuZAdresatami=nazwaPlikuZAdresatamiWyslana;
 }
 
-int PlikZAdresatami::pobierzIdOstatniegoAdresata(){
+int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
     return idOstatniegoAdresata;
 }

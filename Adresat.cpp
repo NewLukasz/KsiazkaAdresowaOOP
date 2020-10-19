@@ -11,8 +11,12 @@ Adresat::Adresat(int idTymczasowe, int idUzytkownikaTymczasowe, string imieTymcz
 }
 
 void Adresat::wypiszDaneAdresata() {
-    cout<<id<<endl;
-    cout<<imie<<endl;
+    cout<<"ID: "<<id<<endl;
+    cout<<"Imie: "<<imie<<endl;
+    cout<<"Nazwisko: "<<nazwisko<<endl;
+    cout<<"Numer telefonu: "<<numerTelefonu<<endl;
+    cout<<"Email: "<<email<<endl;
+    cout<<"Adres: "<<adres<<endl;
 }
 
 int Adresat::pobierzId() {

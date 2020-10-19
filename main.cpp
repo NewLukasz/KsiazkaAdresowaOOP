@@ -28,7 +28,6 @@ int main() {
             }
         } else {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
-            //int idOstatniegoAdresata=ksiazkaAdresowa.przeslijIdOstatniegoAdresata();
             switch (wybor) {
             case '1':
                 ksiazkaAdresowa.dodajAdresata();

@@ -31,7 +31,11 @@ void AdresatMenedzer::wypiszWszystkichAdresatow() {
     }
 }
 
-int AdresatMenedzer::przeslijIdOstatniegoAdresata(){
-    return (adresaci.back()).pobierzId();
+int AdresatMenedzer::przeslijIdOstatniegoAdresata() {
+    if(adresaci.size()==0) {
+        return 0;
+    } else {
+        return (adresaci.back()).pobierzId();
+    }
 }
 

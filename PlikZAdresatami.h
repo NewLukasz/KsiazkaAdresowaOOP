@@ -13,7 +13,7 @@ using namespace std;
 
 class PlikZAdresatami{
     Adresat adresat;
-    int idOstatniegoUzytkownika;
+    //int idOstatniegoUzytkownika;
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
     bool czyPlikJestPusty(fstream &plikTekstowy);
     string nazwaPlikuZAdresatami;

@@ -12,6 +12,7 @@ class KsiazkaAdresowa {
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer *adresatMenedzer;
     const string NAZWA_PLIKU_Z_ADRESATAMI;
+    vector <Uzytkownik> uzytkownicy;
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
@@ -21,7 +22,7 @@ public:
         delete adresatMenedzer;
         adresatMenedzer=NULL;
     }
-    vector <Uzytkownik> uzytkownicy;
+
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
 
