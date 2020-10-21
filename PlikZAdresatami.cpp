@@ -139,5 +139,13 @@ PlikZAdresatami::PlikZAdresatami(string nazwaPlikuZAdresatamiWyslana) {
 }
 
 int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
-    return idOstatniegoAdresata;
+    fstream plikTekstowy;
+    plikTekstowy.open("Adresaci.txt", ios::out | ios::app);
+    if(czyPlikJestPusty(plikTekstowy) == true) {
+        plikTekstowy.close();
+        return 0;
+    } else {
+        plikTekstowy.close();
+        return idOstatniegoAdresata;
+    }
 }

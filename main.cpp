@@ -10,7 +10,6 @@ int main() {
     while (true) {
         if (idZalogowanegoUzytkownika == 0) {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
-
             switch (wybor) {
             case '1':
                 ksiazkaAdresowa.rejestracjaUzytkownika();
@@ -28,6 +27,7 @@ int main() {
             }
         } else {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
+
             switch (wybor) {
             case '1':
                 ksiazkaAdresowa.dodajAdresata();

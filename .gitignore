@@ -5,4 +5,5 @@ obj/
 *.depend
 *.layout
 *.txt
-*.uxf
+*.ux
+*.o

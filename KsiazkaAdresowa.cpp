@@ -48,3 +48,4 @@ int KsiazkaAdresowa::przeslijIdOstatniegoAdresata(){
     adresatMenedzer->przeslijIdOstatniegoAdresata();
 }
 
+

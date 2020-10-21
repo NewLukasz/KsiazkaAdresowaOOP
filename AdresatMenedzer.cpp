@@ -33,7 +33,7 @@ void AdresatMenedzer::wypiszWszystkichAdresatow() {
 
 int AdresatMenedzer::przeslijIdOstatniegoAdresata() {
     if(adresaci.size()==0) {
-        return 0;
+        return plikZAdresatami.pobierzIdOstatniegoAdresata();
     } else {
         return (adresaci.back()).pobierzId();
     }
