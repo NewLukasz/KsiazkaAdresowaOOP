@@ -22,16 +22,15 @@ public:
         delete adresatMenedzer;
         adresatMenedzer=NULL;
     }
-
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-
     char wybierzOpcjeZMenuUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     int logowanieUzytkownika();
-
     void dodajAdresata();
     void wypiszDaneWszytkichAdresatow();
     int przeslijIdOstatniegoAdresata();
+    void wyswietlKontaktyWyszukanePoImieniu();
+    void wyswietlKontaktyWyszukanePoNazwisku();
 };
 #endif

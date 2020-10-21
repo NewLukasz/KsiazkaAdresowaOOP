@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>30</y>
+      <w>350</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>KsiazkaAdresowa
+--
+- uzytkownicy : vector &lt;Uzytkownik&gt; 
+- UzytkownikMenedzer uzytkownikMenedzer
+--
++ KsiazkaAdresowa()
++ rejestracjaUzytkownika() : void
++ wypiszWszystkichUzytkownikow() : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>800</x>
+      <y>50</y>
+      <w>240</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+--
+- id : Integer
+- login : String
+- haslo : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>190</y>
+      <w>360</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>UzytkownikMenedzer
+--
+- idZalogowanegoUzytkownika : Integer
+- uzytkownicy : vector &lt;Uzytkownik&gt;
+- plikZUzytkownikami : PlikZUzytkownikami
+--
++ UzytkownikMenedzer()
++ rejestracjaUzytkownika() : void
++ wczytajUzytkownikowZPliku() : void
+- podajDaneNowegoUzytkownika() : Uzytkownik
+- pobierzIdNowegoUzytkownika() : Integer
+- czyIstniejeLogin() : Bool
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>470</y>
+      <w>560</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+--
+- nazwaPlikuZUzytkownikami : String
+- uzytkownik : Uzytkownik
+- daneJednegoUzytkownikaOddzielonePionowymiKreskami : String
+--
++ PlikZUzytkownikami()
++ dopiszUzytkownikaDoPliku() : void
++ wczytajUzytkownikowZPliku() : vector &lt;Uzytkownik&gt;
+- czyPlikJestPusty() : Bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami () : String
+- pobierzDaneUzytkownika() : Uzytkownik</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>360</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+--
++ konwersjaIntNaString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
