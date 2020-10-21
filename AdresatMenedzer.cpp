@@ -39,3 +39,26 @@ int AdresatMenedzer::przeslijIdOstatniegoAdresata() {
     }
 }
 
+void AdresatMenedzer::wyswietlKontaktyWyszukanePoImieniu(){
+    system("cls");
+    cout<<"Podaj imie: ";
+    string wyszukiwaneImie=MetodyPomocnicze::wczytajLinie();
+    for(int i=0;i<adresaci.size();i++){
+        if(wyszukiwaneImie==adresaci[i].pobierzImie()){
+            adresaci[i].wypiszDaneAdresata();
+        }
+    }
+    system("pause");
+}
+
+void AdresatMenedzer::wyswietlKontaktyWyszukanePoNazwisku(){
+    system("cls");
+    cout<<"Podaj nazwisko: ";
+    string wyszukiwaneNazwisko=MetodyPomocnicze::wczytajLinie();
+    for(int i=0;i<adresaci.size();i++){
+        if(wyszukiwaneNazwisko==adresaci[i].pobierzNazwisko()){
+            adresaci[i].wypiszDaneAdresata();
+        }
+    }
+    system("pause");
+}

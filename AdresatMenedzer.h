@@ -27,6 +27,8 @@ public:
     void dodajAdresata();
     void wypiszWszystkichAdresatow();
     int przeslijIdOstatniegoAdresata();
+    void wyswietlKontaktyWyszukanePoImieniu();
+    void wyswietlKontaktyWyszukanePoNazwisku();
 };
 
 #endif

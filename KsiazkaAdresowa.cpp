@@ -44,6 +44,14 @@ void KsiazkaAdresowa::wypiszDaneWszytkichAdresatow(){
     adresatMenedzer->wypiszWszystkichAdresatow();
 }
 
+void KsiazkaAdresowa::wyswietlKontaktyWyszukanePoImieniu(){
+    adresatMenedzer->wyswietlKontaktyWyszukanePoImieniu();
+}
+
+void KsiazkaAdresowa::wyswietlKontaktyWyszukanePoNazwisku(){
+    adresatMenedzer->wyswietlKontaktyWyszukanePoNazwisku();
+}
+
 int KsiazkaAdresowa::przeslijIdOstatniegoAdresata(){
     adresatMenedzer->przeslijIdOstatniegoAdresata();
 }

@@ -33,10 +33,10 @@ int main() {
                 ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
-//                wyszukajAdresatowPoImieniu(adresaci);
+                ksiazkaAdresowa.wyswietlKontaktyWyszukanePoImieniu();
                 break;
             case '3':
-//                wyszukajAdresatowPoNazwisku(adresaci);
+                ksiazkaAdresowa.wyswietlKontaktyWyszukanePoNazwisku();
                 break;
             case '4':
                 ksiazkaAdresowa.wypiszDaneWszytkichAdresatow();
