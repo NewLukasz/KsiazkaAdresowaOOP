@@ -32,33 +32,48 @@ void AdresatMenedzer::wypiszWszystkichAdresatow() {
 }
 
 int AdresatMenedzer::przeslijIdOstatniegoAdresata() {
-    if(adresaci.size()==0) {
-        return plikZAdresatami.pobierzIdOstatniegoAdresata();
-    } else {
-        return (adresaci.back()).pobierzId();
-    }
+    return plikZAdresatami.pobierzIdOstatniegoAdresata();
+
 }
 
-void AdresatMenedzer::wyswietlKontaktyWyszukanePoImieniu(){
+void AdresatMenedzer::wyswietlKontaktyWyszukanePoImieniu() {
     system("cls");
     cout<<"Podaj imie: ";
     string wyszukiwaneImie=MetodyPomocnicze::wczytajLinie();
-    for(int i=0;i<adresaci.size();i++){
-        if(wyszukiwaneImie==adresaci[i].pobierzImie()){
+    for(int i=0; i<adresaci.size(); i++) {
+        if(wyszukiwaneImie==adresaci[i].pobierzImie()) {
             adresaci[i].wypiszDaneAdresata();
         }
     }
     system("pause");
 }
 
-void AdresatMenedzer::wyswietlKontaktyWyszukanePoNazwisku(){
+void AdresatMenedzer::wyswietlKontaktyWyszukanePoNazwisku() {
     system("cls");
     cout<<"Podaj nazwisko: ";
     string wyszukiwaneNazwisko=MetodyPomocnicze::wczytajLinie();
-    for(int i=0;i<adresaci.size();i++){
-        if(wyszukiwaneNazwisko==adresaci[i].pobierzNazwisko()){
+    for(int i=0; i<adresaci.size(); i++) {
+        if(wyszukiwaneNazwisko==adresaci[i].pobierzNazwisko()) {
             adresaci[i].wypiszDaneAdresata();
         }
     }
     system("pause");
+}
+
+void AdresatMenedzer::usunWybranegoAdresata() {
+    int iDAdresataDoUsuniecia=0;
+    system("cls");
+    wypiszWszystkichAdresatow();
+    cout<<endl<<"Podaj ID adresata którego chcesz usunac: ";
+    cin>>iDAdresataDoUsuniecia;
+    for(int i=0; i<adresaci.size(); i++) {
+        if(adresaci[i].pobierzId()==iDAdresataDoUsuniecia) {
+            cout<<"Adresat znaleziony"<<endl;
+            system("pause");
+            break;
+        } else if(i==adresaci.size()-1) {
+            cout<<"Adresat z id wynoszacym "<<iDAdresataDoUsuniecia<<" nie istnieje"<<endl;
+            system("pause");
+        }
+    }
 }

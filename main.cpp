@@ -27,7 +27,6 @@ int main() {
             }
         } else {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
-
             switch (wybor) {
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
@@ -43,6 +42,7 @@ int main() {
 //                wyswietlWszystkichAdresatow(adresaci);
                 break;
             case '5':
+                ksiazkaAdresowa.usunWybranegoAdresata();
 //                idUsunietegoAdresata = usunAdresata(adresaci);
 //                idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;

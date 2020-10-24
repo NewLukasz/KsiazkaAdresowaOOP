@@ -29,6 +29,7 @@ public:
     int przeslijIdOstatniegoAdresata();
     void wyswietlKontaktyWyszukanePoImieniu();
     void wyswietlKontaktyWyszukanePoNazwisku();
+    void usunWybranegoAdresata();
 };
 
 #endif

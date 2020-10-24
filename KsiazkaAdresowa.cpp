@@ -56,4 +56,8 @@ int KsiazkaAdresowa::przeslijIdOstatniegoAdresata(){
     adresatMenedzer->przeslijIdOstatniegoAdresata();
 }
 
+void KsiazkaAdresowa::usunWybranegoAdresata(){
+    adresatMenedzer->usunWybranegoAdresata();
+}
+
 
