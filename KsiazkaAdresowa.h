@@ -33,5 +33,6 @@ public:
     void wyswietlKontaktyWyszukanePoImieniu();
     void wyswietlKontaktyWyszukanePoNazwisku();
     void usunWybranegoAdresata();
+    void zaladujUzytkownikowPonownieZPliku();
 };
 #endif

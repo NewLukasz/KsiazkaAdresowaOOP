@@ -24,40 +24,46 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
     return wybor;
 }
 
-char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika(){
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     uzytkownikMenedzer.wybierzOpcjeZMenuUzytkownika();
 }
 
-int KsiazkaAdresowa::logowanieUzytkownika(){
+int KsiazkaAdresowa::logowanieUzytkownika() {
     int idZalogowanegoUzytkownika = uzytkownikMenedzer.logowanieUzytkownika();
-    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany()){
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany()) {
         adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
     }
     return idZalogowanegoUzytkownika;
 }
 
-void KsiazkaAdresowa::dodajAdresata(){
+void KsiazkaAdresowa::dodajAdresata() {
     adresatMenedzer->dodajAdresata();
 }
 
-void KsiazkaAdresowa::wypiszDaneWszytkichAdresatow(){
+void KsiazkaAdresowa::wypiszDaneWszytkichAdresatow() {
     adresatMenedzer->wypiszWszystkichAdresatow();
 }
 
-void KsiazkaAdresowa::wyswietlKontaktyWyszukanePoImieniu(){
+void KsiazkaAdresowa::wyswietlKontaktyWyszukanePoImieniu() {
     adresatMenedzer->wyswietlKontaktyWyszukanePoImieniu();
 }
 
-void KsiazkaAdresowa::wyswietlKontaktyWyszukanePoNazwisku(){
+void KsiazkaAdresowa::wyswietlKontaktyWyszukanePoNazwisku() {
     adresatMenedzer->wyswietlKontaktyWyszukanePoNazwisku();
 }
 
-int KsiazkaAdresowa::przeslijIdOstatniegoAdresata(){
+int KsiazkaAdresowa::przeslijIdOstatniegoAdresata() {
     adresatMenedzer->przeslijIdOstatniegoAdresata();
 }
 
-void KsiazkaAdresowa::usunWybranegoAdresata(){
+void KsiazkaAdresowa::usunWybranegoAdresata() {
     adresatMenedzer->usunWybranegoAdresata();
+}
+
+void KsiazkaAdresowa::zaladujUzytkownikowPonownieZPliku() {
+    delete adresatMenedzer;
+    adresatMenedzer=NULL;
+    adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
 
 

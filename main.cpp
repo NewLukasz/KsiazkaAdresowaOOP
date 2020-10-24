@@ -30,6 +30,7 @@ int main() {
             switch (wybor) {
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
+                ksiazkaAdresowa.zaladujUzytkownikowPonownieZPliku();
                 break;
             case '2':
                 ksiazkaAdresowa.wyswietlKontaktyWyszukanePoImieniu();
@@ -39,12 +40,10 @@ int main() {
                 break;
             case '4':
                 ksiazkaAdresowa.wypiszDaneWszytkichAdresatow();
-//                wyswietlWszystkichAdresatow(adresaci);
                 break;
             case '5':
                 ksiazkaAdresowa.usunWybranegoAdresata();
-//                idUsunietegoAdresata = usunAdresata(adresaci);
-//                idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                ksiazkaAdresowa.zaladujUzytkownikowPonownieZPliku();
                 break;
             case '6':
 //                edytujAdresata(adresaci);
