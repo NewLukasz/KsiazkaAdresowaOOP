@@ -4,7 +4,7 @@ void PlikZAdresatami::dopiszAdrestaDoPliku(Adresat adresat) {
 
     string liniaZDanymiAdresata = "";
     fstream plikTekstowy;
-    plikTekstowy.open("Adresaci.txt", ios::out | ios::app);
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::out | ios::app);
 
     if (plikTekstowy.good() == true) {
         liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
@@ -137,7 +137,7 @@ PlikZAdresatami::PlikZAdresatami(string nazwaPlikuZAdresatamiWyslana) {
 
 int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
     fstream plikTekstowy;
-    plikTekstowy.open("Adresaci.txt", ios::out | ios::app);
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::out | ios::app);
     if(czyPlikJestPusty(plikTekstowy) == true) {
         plikTekstowy.close();
         return 0;
@@ -145,4 +145,29 @@ int PlikZAdresatami::pobierzIdOstatniegoAdresata() {
         plikTekstowy.close();
         return idOstatniegoAdresata;
     }
+}
+
+void PlikZAdresatami::usuwanieAdresataZPliku(int iDAdresataDoUsuniecia) {
+    fstream plikTekstowy, plikTekstowyTymczasowy;
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+
+    plikTekstowyTymczasowy.open("AdresaciTymczasowy.txt", ios::out | ios::app);
+
+    string daneJednegoAdresataOddzielonePionowymiKreskami="";
+    if (plikTekstowy.good() == true) {
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
+            if(iDAdresataDoUsuniecia!=pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami)){
+                idOstatniegoAdresata=pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami);
+                if(daneJednegoAdresataOddzielonePionowymiKreskami!=""){
+                    plikTekstowyTymczasowy<<daneJednegoAdresataOddzielonePionowymiKreskami<<endl;
+                }
+            }
+        }
+    } else
+        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+
+    plikTekstowy.close();
+    plikTekstowyTymczasowy.close();
+    remove(nazwaPlikuZAdresatami.c_str());
+    rename("AdresaciTymczasowy.txt",nazwaPlikuZAdresatami.c_str());
 }

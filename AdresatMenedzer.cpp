@@ -62,15 +62,19 @@ void AdresatMenedzer::wyswietlKontaktyWyszukanePoNazwisku() {
 
 void AdresatMenedzer::usunWybranegoAdresata() {
     int iDAdresataDoUsuniecia=0;
+    char znak='a';
     system("cls");
     wypiszWszystkichAdresatow();
-    cout<<endl<<"Podaj ID adresata którego chcesz usunac: ";
+    cout<<endl<<"Podaj ID adresata ktorego chcesz usunac: ";
     cin>>iDAdresataDoUsuniecia;
     for(int i=0; i<adresaci.size(); i++) {
         if(adresaci[i].pobierzId()==iDAdresataDoUsuniecia) {
-            cout<<"Adresat znaleziony"<<endl;
-            system("pause");
-            break;
+            cout<<endl<<"Czy na pewno chcesz usunac adresata? Jezeli tak wcisnik t."<<endl;
+            znak=MetodyPomocnicze::wczytajZnak();
+            if(znak=='t') {
+                plikZAdresatami.usuwanieAdresataZPliku(iDAdresataDoUsuniecia);
+                break;
+            }
         } else if(i==adresaci.size()-1) {
             cout<<"Adresat z id wynoszacym "<<iDAdresataDoUsuniecia<<" nie istnieje"<<endl;
             system("pause");
