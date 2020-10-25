@@ -186,8 +186,6 @@ void PlikZAdresatami::modyfikacjaAdresataWPliku(int idAdresataDoEdycji, Adresat 
 
     if (plikTekstowy.good() == true) {
         while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
-            cout<<daneJednegoAdresataOddzielonePionowymiKreskami<<endl;
-            system("pause");
             if(idAdresataDoEdycji!=pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami)) {
                 if (czyPlikJestPusty(plikTekstowyTymczasowy) == true) {
                     plikTekstowyTymczasowy << daneJednegoAdresataOddzielonePionowymiKreskami;
