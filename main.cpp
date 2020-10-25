@@ -50,7 +50,7 @@ int main() {
                 ksiazkaAdresowa.zaladujUzytkownikowPonownieZPliku();
                 break;
             case '7':
-//                zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.edytujHasloUzytkownika();
                 break;
             case '8':
                 idZalogowanegoUzytkownika = 0;

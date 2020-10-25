@@ -70,4 +70,8 @@ void KsiazkaAdresowa::edytujAdresata(){
     adresatMenedzer->edytujAdresata();
 }
 
+void KsiazkaAdresowa::edytujHasloUzytkownika(){
+    uzytkownikMenedzer.edytujHasloUzytkownika();
+}
+
 

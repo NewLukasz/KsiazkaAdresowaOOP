@@ -35,5 +35,6 @@ public:
     void usunWybranegoAdresata();
     void zaladujUzytkownikowPonownieZPliku();
     void edytujAdresata();
+    void edytujHasloUzytkownika();
 };
 #endif

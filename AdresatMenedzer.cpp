@@ -149,7 +149,6 @@ void AdresatMenedzer::edytujAdresata() {
             break;
         }
     }
-    cout<<"Edytowanie adresata"<<endl;
     system("pause");
 }
 

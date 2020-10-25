@@ -67,12 +67,12 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
 
     vector <Uzytkownik>::iterator itr = uzytkownicy.begin();
 
-    for(int i=0;i<uzytkownicy.size();i++){
-        if(uzytkownicy[i].pobierzLogin()==login){
-            for(int iloscProb = 3; iloscProb>0; iloscProb--){
+    for(int i=0; i<uzytkownicy.size(); i++) {
+        if(uzytkownicy[i].pobierzLogin()==login) {
+            for(int iloscProb = 3; iloscProb>0; iloscProb--) {
                 cout<<"Podaj haslo. Pozostalo prob: "<<iloscProb<<": ";
                 haslo=MetodyPomocnicze::wczytajLinie();
-                if(uzytkownicy[i].pobierzHaslo()==haslo){
+                if(uzytkownicy[i].pobierzHaslo()==haslo) {
                     cout<<endl<<"Zalogowales sie."<<endl<<endl;
                     system("pause");
                     idZalogowanegoUzytkownika=uzytkownicy[i].pobierzId();
@@ -89,7 +89,7 @@ int UzytkownikMenedzer::logowanieUzytkownika() {
     return 0;
 }
 
-char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika(){
+char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika() {
     char wybor;
 
     system("cls");
@@ -111,14 +111,29 @@ char UzytkownikMenedzer::wybierzOpcjeZMenuUzytkownika(){
     return wybor;
 }
 
-bool UzytkownikMenedzer::czyUzytkownikJestZalogowany(){
-    if (idZalogowanegoUzytkownika==0){
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany() {
+    if (idZalogowanegoUzytkownika==0) {
         return false;
-    }else{
+    } else {
         return true;
     }
 }
 
-int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika(){
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika() {
     return idZalogowanegoUzytkownika;
 }
+
+void UzytkownikMenedzer::edytujHasloUzytkownika() {
+    system("cls");
+    cout<<endl<<"Podaj nowe haslo: ";
+    string noweHaslo;
+    noweHaslo=MetodyPomocnicze::wczytajLinie();
+    for(int i=0;i<uzytkownicy.size();i++){
+            if(idZalogowanegoUzytkownika==uzytkownicy[i].pobierzId()){
+                uzytkownicy[i].ustawHaslo(noweHaslo);
+                plikZUzytkownikami.zmianaHasloUzytkownika(idZalogowanegoUzytkownika,uzytkownicy[i]);
+            }
+    }
+    system("pause");
+}
+
