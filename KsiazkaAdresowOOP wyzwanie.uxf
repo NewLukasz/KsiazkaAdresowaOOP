@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>485</x>
-      <y>40</y>
-      <w>175</w>
-      <h>135</h>
+      <x>475</x>
+      <y>10</y>
+      <w>205</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>KsiazkaAdresowa
 --
@@ -26,6 +26,12 @@
 + dodajAdresata() : void
 + wypiszWszystkichAdresatow() : void
 + przeslijIdOstatniegoAdresata() : int 
++ wyswietlKontaktyWszukiwanePoImieniu() : void
++ wyswietlKontaktyWszukiwanePoNazwisku(): void
++ usunWybranegoAdresata() : void
++ zaladujUzytkownikowPonownieZPliku() : void
++ edytujAdresata() : void
++ edytujHasloUzytkownika() : void
 
 </panel_attributes>
     <additional_attributes/>
@@ -66,9 +72,11 @@
 + czyUzytkownikJestZalogowany() : bool
 + pobierzIdZalogowanegoUzytkoniwka() : int
 + rejestracjaUzytkownika() : void
++ edytujHasloUzytkownika() : void
 - podajDaneNowegoUzytkownika() : Uzytkownik
 - pobierzIdNowegoUzytkownika() : Integer
 - czyIstniejeLogin() : Bool
+
 
 </panel_attributes>
     <additional_attributes/>
@@ -90,6 +98,9 @@
 + PlikZUzytkownikami()
 + dopiszUzytkownikaDoPliku() : void
 + wczytajUzytkownikowZPliku() : vector &lt;Uzytkownik&gt;
++ zmianaHaslaUzytkownika() : void
++ pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : int
++ pobierzLiczbe() : String
 - czyPlikJestPusty() : Bool
 - zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami () : String
 - pobierzDaneUzytkownika() : Uzytkownik</panel_attributes>
@@ -98,8 +109,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>60</y>
+      <x>140</x>
+      <y>50</y>
       <w>140</w>
       <h>60</h>
     </coordinates>
@@ -116,8 +127,8 @@
     <coordinates>
       <x>595</x>
       <y>210</y>
-      <w>205</w>
-      <h>95</h>
+      <w>200</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
@@ -130,14 +141,18 @@
 + AdresatMenedzer()
 + dodajAdresata() : void
 + wypiszWszystkichAdresatow() : void
-+ przeslijIdOstatniegoAdresata() : int</panel_attributes>
++ przeslijIdOstatniegoAdresata() : int
++ wyswietlKontaktyWyszukanePoImieniu() : void
++ wyswietlKontaktyWyszukanePoNazwisku() : void
++ usunWybranegoAdresata() : void
++ edytujAdresata() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>605</x>
-      <y>340</y>
+      <x>585</x>
+      <y>355</y>
       <w>230</w>
       <h>100</h>
     </coordinates>
@@ -161,7 +176,7 @@
       <x>595</x>
       <y>490</y>
       <w>295</w>
-      <h>140</h>
+      <h>145</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
@@ -178,7 +193,9 @@
 + pobierzDaneAdresata() : Adresat
 + pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : int
 + pobierzLiczbe() : string
-+ pobierzIdOstatniegoAdresata() : int</panel_attributes>
++ pobierzIdOstatniegoAdresata() : int
++ usuwanieAdresataZPliku() : void
++ modyfikacjaAdresataWPliku(): void</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
