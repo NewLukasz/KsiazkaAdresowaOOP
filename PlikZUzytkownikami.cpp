@@ -74,3 +74,57 @@ Uzytkownik PlikZUzytkownikami::pobierzDaneUzytkownika() {
     }
     return uzytkownik;
 }
+
+void PlikZUzytkownikami::zmianaHasloUzytkownika(int idZalogowaneUzytkownika, Uzytkownik uzytkownik) {
+    fstream plikTekstowy, plikTekstowyTymczasowy;
+
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
+    plikTekstowyTymczasowy.open("UzytkownicyTymczasowy.txt", ios::out | ios::app);
+
+    string liniaZDanymiUzytkownika="";
+
+    if (plikTekstowy.good() == true) {
+        while (getline(plikTekstowy, liniaZDanymiUzytkownika)) {
+            if(idZalogowaneUzytkownika!=pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(liniaZDanymiUzytkownika)) {
+                if (czyPlikJestPusty(plikTekstowyTymczasowy) == true) {
+                    plikTekstowyTymczasowy << liniaZDanymiUzytkownika;
+                } else {
+                    plikTekstowyTymczasowy << endl << liniaZDanymiUzytkownika ;
+                }
+            } else if(idZalogowaneUzytkownika==pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(liniaZDanymiUzytkownika)) {
+                liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownik);
+
+
+                if (czyPlikJestPusty(plikTekstowyTymczasowy) == true) {
+                    plikTekstowyTymczasowy << liniaZDanymiUzytkownika;
+                } else {
+                    plikTekstowyTymczasowy << endl << liniaZDanymiUzytkownika ;
+                }
+            }
+        }
+    } else {
+        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+    }
+
+    plikTekstowy.close();
+    plikTekstowyTymczasowy.close();
+
+    remove(nazwaPlikuZUzytkownikami.c_str());
+    rename("UzytkownicyTymczasowy.txt",nazwaPlikuZUzytkownikami.c_str());
+}
+
+
+int PlikZUzytkownikami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoUzytkownikaOddzielonePionowymiKreskami) {
+    int pozycjaRozpoczeciaIdUzytkownika = 0;
+    int idUzytkownika = MetodyPomocnicze::konwersjaStringNaInt(pobierzLiczbe(daneJednegoUzytkownikaOddzielonePionowymiKreskami, pozycjaRozpoczeciaIdUzytkownika));
+    return idUzytkownika;
+}
+
+string PlikZUzytkownikami::pobierzLiczbe(string tekst, int pozycjaZnaku) {
+    string liczba = "";
+    while(isdigit(tekst[pozycjaZnaku]) == true) {
+        liczba += tekst[pozycjaZnaku];
+        pozycjaZnaku ++;
+    }
+    return liczba;
+}

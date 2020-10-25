@@ -30,5 +30,6 @@ public:
     void wypiszWszystkichUzytkownikow();
     bool czyUzytkownikJestZalogowany();
     int pobierzIdZalogowanegoUzytkownika();
+    void edytujHasloUzytkownika();
 };
 #endif

@@ -23,6 +23,12 @@ public:
     PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI){daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";} ;
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
+    void zmianaHasloUzytkownika(int idZalogowaneUzytkownika, Uzytkownik uzytkownik);
 
+
+
+    int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+    string pobierzLiczbe(string tekst, int pozycjaZnaku);
 };
+
 #endif
