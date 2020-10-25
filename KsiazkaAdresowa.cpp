@@ -66,4 +66,8 @@ void KsiazkaAdresowa::zaladujUzytkownikowPonownieZPliku() {
     adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
 
+void KsiazkaAdresowa::edytujAdresata(){
+    adresatMenedzer->edytujAdresata();
+}
+
 

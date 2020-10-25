@@ -81,3 +81,76 @@ void AdresatMenedzer::usunWybranegoAdresata() {
         }
     }
 }
+
+void AdresatMenedzer::edytujAdresata() {
+    system("cls");
+    wypiszWszystkichAdresatow();
+    int idAdresataDoModyfikacji;
+    cout<<endl<<"Podaj ID adresata, ktorego chcesz zmodyfikowac: ";
+    cin>>idAdresataDoModyfikacji;
+    for(int i=0; i<adresaci.size(); i++) {
+        if(idAdresataDoModyfikacji==adresaci[i].pobierzId()) {
+            system("cls");
+            cout<<"Modyfikowany kontakt to: "<<endl;
+            adresaci[i].wypiszDaneAdresata();
+
+            system("cls");
+            cout<<"Podaj numer pola ktore ma zostac zmodyfikowane."<<endl;
+            cout<<"1. Imie"<<endl<<"2. Nazwisko"<<endl<<"3. Numer telefonu"<<endl<<"4. Email"<<endl<<"5. Adres"<<endl;
+            cout<<"Pole do modyfikacji: ";
+            char wybor;
+            cin>>wybor;
+            switch (wybor) {
+            case '1': {
+                cout<<"Podaj nowa wartosc dla pola imie: ";
+                string noweImie=MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawImie(noweImie);
+                plikZAdresatami.modyfikacjaAdresataWPliku(idAdresataDoModyfikacji, adresaci[i]);
+                break;
+            }
+            case '2': {
+                cout<<"Podaj nowa wartosc dla pola nazwisko: ";
+                string noweNazwisko=MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawNazwisko(noweNazwisko);
+                plikZAdresatami.modyfikacjaAdresataWPliku(idAdresataDoModyfikacji, adresaci[i]);
+                break;
+            }
+
+            case '3': {
+                cout<<"Podaj nowa wartosc dla pola numer telefonu: ";
+                string nowyNumer=MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawNumerTelefonu(nowyNumer);
+                plikZAdresatami.modyfikacjaAdresataWPliku(idAdresataDoModyfikacji, adresaci[i]);
+                break;
+            }
+
+            case '4': {
+                cout<<"Podaj nowa wartosc dla pola email: ";
+                string nowyEmail=MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawEmail(nowyEmail);
+                plikZAdresatami.modyfikacjaAdresataWPliku(idAdresataDoModyfikacji, adresaci[i]);
+                break;
+            }
+            case '5': {
+                cout<<"Podaj nowa wartosc dla pola adres: ";
+                string nowyAdres=MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawAdres(nowyAdres);
+                plikZAdresatami.modyfikacjaAdresataWPliku(idAdresataDoModyfikacji, adresaci[i]);
+                break;
+            }
+            default: {
+                cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
+                break;
+            }
+            }
+        } else if(i==adresaci.size()-1) {
+            cout<<"Brak adresata o taki id!"<<endl;
+            system("pause");
+            break;
+        }
+    }
+    cout<<"Edytowanie adresata"<<endl;
+    system("pause");
+}
+
+

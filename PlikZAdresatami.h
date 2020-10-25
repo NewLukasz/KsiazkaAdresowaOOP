@@ -30,6 +30,7 @@ public:
     string pobierzLiczbe(string tekst, int pozycjaZnaku);
     int pobierzIdOstatniegoAdresata();
     void usuwanieAdresataZPliku(int iDAdresataDoUsuniecia);
+    void modyfikacjaAdresataWPliku(int idAdresataDoEdycji,Adresat adresat);
 };
 
 
