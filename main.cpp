@@ -46,7 +46,8 @@ int main() {
                 ksiazkaAdresowa.zaladujUzytkownikowPonownieZPliku();
                 break;
             case '6':
-//                edytujAdresata(adresaci);
+                ksiazkaAdresowa.edytujAdresata();
+                ksiazkaAdresowa.zaladujUzytkownikowPonownieZPliku();
                 break;
             case '7':
 //                zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);

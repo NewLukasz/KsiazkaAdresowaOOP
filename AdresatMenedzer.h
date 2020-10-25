@@ -30,6 +30,7 @@ public:
     void wyswietlKontaktyWyszukanePoImieniu();
     void wyswietlKontaktyWyszukanePoNazwisku();
     void usunWybranegoAdresata();
+    void edytujAdresata();
 };
 
 #endif
